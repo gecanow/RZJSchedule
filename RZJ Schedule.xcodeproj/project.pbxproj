@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88F3B94E1F5A0F4400DEB4BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B94D1F5A0F4400DEB4BB /* AppDelegate.swift */; };
+		88F3B9501F5A0F4400DEB4BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B94F1F5A0F4400DEB4BB /* ViewController.swift */; };
+		88F3B9531F5A0F4400DEB4BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F3B9511F5A0F4400DEB4BB /* Main.storyboard */; };
+		88F3B9551F5A0F4400DEB4BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F3B9541F5A0F4400DEB4BB /* Assets.xcassets */; };
+		88F3B9581F5A0F4400DEB4BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F3B9561F5A0F4400DEB4BB /* LaunchScreen.storyboard */; };
+		88F3B9631F5A0F4400DEB4BB /* RZJ_ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B9621F5A0F4400DEB4BB /* RZJ_ScheduleTests.swift */; };
+		88F3B96E1F5A0F4400DEB4BB /* RZJ_ScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B96D1F5A0F4400DEB4BB /* RZJ_ScheduleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88F3B95F1F5A0F4400DEB4BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F3B9421F5A0F4300DEB4BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F3B9491F5A0F4400DEB4BB;
+			remoteInfo = "RZJ Schedule";
+		};
+		88F3B96A1F5A0F4400DEB4BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F3B9421F5A0F4300DEB4BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F3B9491F5A0F4400DEB4BB;
+			remoteInfo = "RZJ Schedule";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		88F3B94A1F5A0F4400DEB4BB /* RZJ Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RZJ Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F3B94D1F5A0F4400DEB4BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88F3B94F1F5A0F4400DEB4BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		88F3B9521F5A0F4400DEB4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88F3B9541F5A0F4400DEB4BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88F3B9571F5A0F4400DEB4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88F3B9591F5A0F4400DEB4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F3B95E1F5A0F4400DEB4BB /* RZJ ScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RZJ ScheduleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F3B9621F5A0F4400DEB4BB /* RZJ_ScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZJ_ScheduleTests.swift; sourceTree = "<group>"; };
+		88F3B9641F5A0F4400DEB4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F3B9691F5A0F4400DEB4BB /* RZJ ScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RZJ ScheduleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F3B96D1F5A0F4400DEB4BB /* RZJ_ScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZJ_ScheduleUITests.swift; sourceTree = "<group>"; };
+		88F3B96F1F5A0F4400DEB4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88F3B9471F5A0F4400DEB4BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F3B95B1F5A0F4400DEB4BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F3B9661F5A0F4400DEB4BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88F3B9411F5A0F4300DEB4BB = {
+			isa = PBXGroup;
+			children = (
+				88F3B94C1F5A0F4400DEB4BB /* RZJ Schedule */,
+				88F3B9611F5A0F4400DEB4BB /* RZJ ScheduleTests */,
+				88F3B96C1F5A0F4400DEB4BB /* RZJ ScheduleUITests */,
+				88F3B94B1F5A0F4400DEB4BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88F3B94B1F5A0F4400DEB4BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88F3B94A1F5A0F4400DEB4BB /* RZJ Schedule.app */,
+				88F3B95E1F5A0F4400DEB4BB /* RZJ ScheduleTests.xctest */,
+				88F3B9691F5A0F4400DEB4BB /* RZJ ScheduleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88F3B94C1F5A0F4400DEB4BB /* RZJ Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				88F3B94D1F5A0F4400DEB4BB /* AppDelegate.swift */,
+				88F3B94F1F5A0F4400DEB4BB /* ViewController.swift */,
+				88F3B9511F5A0F4400DEB4BB /* Main.storyboard */,
+				88F3B9541F5A0F4400DEB4BB /* Assets.xcassets */,
+				88F3B9561F5A0F4400DEB4BB /* LaunchScreen.storyboard */,
+				88F3B9591F5A0F4400DEB4BB /* Info.plist */,
+			);
+			path = "RZJ Schedule";
+			sourceTree = "<group>";
+		};
+		88F3B9611F5A0F4400DEB4BB /* RZJ ScheduleTests */ = {
+			isa = PBXGroup;
+			children = (
+				88F3B9621F5A0F4400DEB4BB /* RZJ_ScheduleTests.swift */,
+				88F3B9641F5A0F4400DEB4BB /* Info.plist */,
+			);
+			path = "RZJ ScheduleTests";
+			sourceTree = "<group>";
+		};
+		88F3B96C1F5A0F4400DEB4BB /* RZJ ScheduleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				88F3B96D1F5A0F4400DEB4BB /* RZJ_ScheduleUITests.swift */,
+				88F3B96F1F5A0F4400DEB4BB /* Info.plist */,
+			);
+			path = "RZJ ScheduleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88F3B9491F5A0F4400DEB4BB /* RZJ Schedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F3B9721F5A0F4400DEB4BB /* Build configuration list for PBXNativeTarget "RZJ Schedule" */;
+			buildPhases = (
+				88F3B9461F5A0F4400DEB4BB /* Sources */,
+				88F3B9471F5A0F4400DEB4BB /* Frameworks */,
+				88F3B9481F5A0F4400DEB4BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RZJ Schedule";
+			productName = "RZJ Schedule";
+			productReference = 88F3B94A1F5A0F4400DEB4BB /* RZJ Schedule.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88F3B95D1F5A0F4400DEB4BB /* RZJ ScheduleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F3B9751F5A0F4400DEB4BB /* Build configuration list for PBXNativeTarget "RZJ ScheduleTests" */;
+			buildPhases = (
+				88F3B95A1F5A0F4400DEB4BB /* Sources */,
+				88F3B95B1F5A0F4400DEB4BB /* Frameworks */,
+				88F3B95C1F5A0F4400DEB4BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88F3B9601F5A0F4400DEB4BB /* PBXTargetDependency */,
+			);
+			name = "RZJ ScheduleTests";
+			productName = "RZJ ScheduleTests";
+			productReference = 88F3B95E1F5A0F4400DEB4BB /* RZJ ScheduleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		88F3B9681F5A0F4400DEB4BB /* RZJ ScheduleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F3B9781F5A0F4400DEB4BB /* Build configuration list for PBXNativeTarget "RZJ ScheduleUITests" */;
+			buildPhases = (
+				88F3B9651F5A0F4400DEB4BB /* Sources */,
+				88F3B9661F5A0F4400DEB4BB /* Frameworks */,
+				88F3B9671F5A0F4400DEB4BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88F3B96B1F5A0F4400DEB4BB /* PBXTargetDependency */,
+			);
+			name = "RZJ ScheduleUITests";
+			productName = "RZJ ScheduleUITests";
+			productReference = 88F3B9691F5A0F4400DEB4BB /* RZJ ScheduleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88F3B9421F5A0F4300DEB4BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Gaby Ecanow";
+				TargetAttributes = {
+					88F3B9491F5A0F4400DEB4BB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K4Z76LM5AD;
+						ProvisioningStyle = Automatic;
+					};
+					88F3B95D1F5A0F4400DEB4BB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K4Z76LM5AD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 88F3B9491F5A0F4400DEB4BB;
+					};
+					88F3B9681F5A0F4400DEB4BB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K4Z76LM5AD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 88F3B9491F5A0F4400DEB4BB;
+					};
+				};
+			};
+			buildConfigurationList = 88F3B9451F5A0F4300DEB4BB /* Build configuration list for PBXProject "RZJ Schedule" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88F3B9411F5A0F4300DEB4BB;
+			productRefGroup = 88F3B94B1F5A0F4400DEB4BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88F3B9491F5A0F4400DEB4BB /* RZJ Schedule */,
+				88F3B95D1F5A0F4400DEB4BB /* RZJ ScheduleTests */,
+				88F3B9681F5A0F4400DEB4BB /* RZJ ScheduleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88F3B9481F5A0F4400DEB4BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F3B9581F5A0F4400DEB4BB /* LaunchScreen.storyboard in Resources */,
+				88F3B9551F5A0F4400DEB4BB /* Assets.xcassets in Resources */,
+				88F3B9531F5A0F4400DEB4BB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F3B95C1F5A0F4400DEB4BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F3B9671F5A0F4400DEB4BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88F3B9461F5A0F4400DEB4BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F3B9501F5A0F4400DEB4BB /* ViewController.swift in Sources */,
+				88F3B94E1F5A0F4400DEB4BB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F3B95A1F5A0F4400DEB4BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F3B9631F5A0F4400DEB4BB /* RZJ_ScheduleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F3B9651F5A0F4400DEB4BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F3B96E1F5A0F4400DEB4BB /* RZJ_ScheduleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88F3B9601F5A0F4400DEB4BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88F3B9491F5A0F4400DEB4BB /* RZJ Schedule */;
+			targetProxy = 88F3B95F1F5A0F4400DEB4BB /* PBXContainerItemProxy */;
+		};
+		88F3B96B1F5A0F4400DEB4BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88F3B9491F5A0F4400DEB4BB /* RZJ Schedule */;
+			targetProxy = 88F3B96A1F5A0F4400DEB4BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		88F3B9511F5A0F4400DEB4BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88F3B9521F5A0F4400DEB4BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		88F3B9561F5A0F4400DEB4BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88F3B9571F5A0F4400DEB4BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88F3B9701F5A0F4400DEB4BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88F3B9711F5A0F4400DEB4BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88F3B9731F5A0F4400DEB4BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K4Z76LM5AD;
+				INFOPLIST_FILE = "RZJ Schedule/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EcaKnowGames.RZJ-Schedule";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		88F3B9741F5A0F4400DEB4BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K4Z76LM5AD;
+				INFOPLIST_FILE = "RZJ Schedule/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EcaKnowGames.RZJ-Schedule";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		88F3B9761F5A0F4400DEB4BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = K4Z76LM5AD;
+				INFOPLIST_FILE = "RZJ ScheduleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EcaKnowGames.RZJ-ScheduleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RZJ Schedule.app/RZJ Schedule";
+			};
+			name = Debug;
+		};
+		88F3B9771F5A0F4400DEB4BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = K4Z76LM5AD;
+				INFOPLIST_FILE = "RZJ ScheduleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EcaKnowGames.RZJ-ScheduleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RZJ Schedule.app/RZJ Schedule";
+			};
+			name = Release;
+		};
+		88F3B9791F5A0F4400DEB4BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = K4Z76LM5AD;
+				INFOPLIST_FILE = "RZJ ScheduleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EcaKnowGames.RZJ-ScheduleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "RZJ Schedule";
+			};
+			name = Debug;
+		};
+		88F3B97A1F5A0F4400DEB4BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = K4Z76LM5AD;
+				INFOPLIST_FILE = "RZJ ScheduleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EcaKnowGames.RZJ-ScheduleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "RZJ Schedule";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88F3B9451F5A0F4300DEB4BB /* Build configuration list for PBXProject "RZJ Schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F3B9701F5A0F4400DEB4BB /* Debug */,
+				88F3B9711F5A0F4400DEB4BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88F3B9721F5A0F4400DEB4BB /* Build configuration list for PBXNativeTarget "RZJ Schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F3B9731F5A0F4400DEB4BB /* Debug */,
+				88F3B9741F5A0F4400DEB4BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88F3B9751F5A0F4400DEB4BB /* Build configuration list for PBXNativeTarget "RZJ ScheduleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F3B9761F5A0F4400DEB4BB /* Debug */,
+				88F3B9771F5A0F4400DEB4BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88F3B9781F5A0F4400DEB4BB /* Build configuration list for PBXNativeTarget "RZJ ScheduleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F3B9791F5A0F4400DEB4BB /* Debug */,
+				88F3B97A1F5A0F4400DEB4BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88F3B9421F5A0F4300DEB4BB /* Project object */;
+}
