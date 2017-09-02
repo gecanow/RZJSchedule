@@ -105,10 +105,10 @@
 			children = (
 				88F3B94D1F5A0F4400DEB4BB /* AppDelegate.swift */,
 				88F3B94F1F5A0F4400DEB4BB /* ViewController.swift */,
-				88F3B9811F5B232F00DEB4BB /* MainTimer.swift */,
-				88F3B9511F5A0F4400DEB4BB /* Main.storyboard */,
 				88F3B97F1F5A496300DEB4BB /* FullScheduleViewController.swift */,
 				88F3B97D1F5A1E7900DEB4BB /* Schedule.swift */,
+				88F3B9811F5B232F00DEB4BB /* MainTimer.swift */,
+				88F3B9511F5A0F4400DEB4BB /* Main.storyboard */,
 				88F3B9541F5A0F4400DEB4BB /* Assets.xcassets */,
 				88F3B9561F5A0F4400DEB4BB /* LaunchScreen.storyboard */,
 				88F3B9591F5A0F4400DEB4BB /* Info.plist */,

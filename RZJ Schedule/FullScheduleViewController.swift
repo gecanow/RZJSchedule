@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FullScheduleViewController: UIViewController, MainTimerDelegate {
+class FullScheduleViewController: UIViewController {
     
     @IBOutlet weak var largeDayLabel: UILabel!
     @IBOutlet weak var clockLabel: UILabel!
@@ -33,7 +33,7 @@ class FullScheduleViewController: UIViewController, MainTimerDelegate {
         largeDayLabel.text = schedule.type
         allPeriodButtons = [one, two, three, four, five, six, seven, eight]
         
-        timer.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name(rawValue: timerKey), object: nil)
         for i in 0..<schedule.periods.count {
             updateUI(forIndex: i)
         }
@@ -41,11 +41,14 @@ class FullScheduleViewController: UIViewController, MainTimerDelegate {
     
     func update() {
         clockLabel.text = timer.currentTimer
-        allPeriodButtons[timer.cpi].setTitleColor(.red, for: .normal)
         
-        let x = clockLabel.frame.midX
-        let y = allPeriodButtons[timer.cpi].frame.midY
-        clockLabel.center = CGPoint(x: x, y: y)
+        if timer.cpi >= 0 && timer.cpi <= allPeriodButtons.count {
+            allPeriodButtons[timer.cpi].setTitleColor(.red, for: .normal)
+            
+            let x = clockLabel.frame.midX
+            let y = allPeriodButtons[timer.cpi].frame.midY
+            clockLabel.center = CGPoint(x: x, y: y)
+        }
     }
     
     @IBAction func onTappedPeriod(_ sender: UIButton) {

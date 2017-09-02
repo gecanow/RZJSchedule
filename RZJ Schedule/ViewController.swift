@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, MainTimerDelegate {
+class ViewController: UIViewController {
     
     var dayList : [UIButton]!
     @IBOutlet weak var a: UIButton!
@@ -29,7 +29,7 @@ class ViewController: UIViewController, MainTimerDelegate {
     @IBOutlet weak var upNext: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    let selectedBorder = CGFloat(4)
+    let selectedBorder = CGFloat(5)
     
     var myTimer : MainTimer!
     
@@ -42,14 +42,15 @@ class ViewController: UIViewController, MainTimerDelegate {
         setDate()
         
         myTimer = MainTimer(classSchedules[0]) // just for initialization
-        myTimer.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name(rawValue: timerKey), object: nil)
+        
         setTodaysSchedule()
         
         currentDay.setTitle(String(myTimer.mySchedule.type), for: .normal)
     }
     @IBAction func onTappedDay(_ sender: UIButton) {
         for d in dayList {
-            d.layer.borderWidth = 0
+            d.layer.borderWidth = 1
         }
         
         UserDefaults.standard.setValue(sender.tag, forKey: "DayTag")
@@ -57,6 +58,7 @@ class ViewController: UIViewController, MainTimerDelegate {
         
         setTodaysSchedule()
     }
+    
     @IBAction func onTappedChangeDay(_ sender: Any) {
         dayToolbar.isHidden = !dayToolbar.isHidden
         
@@ -71,9 +73,11 @@ class ViewController: UIViewController, MainTimerDelegate {
             }
         }
     }
+    
     @IBAction func onTappedSettings(_ sender: Any) {
         settingsToolbar.isHidden = !settingsToolbar.isHidden
     }
+    
     private func setTodaysSchedule() {
         let tag = UserDefaults.standard.value(forKey: "DayTag") as! Int
         myTimer.mySchedule = classSchedules[tag]
