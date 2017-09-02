@@ -8,10 +8,13 @@
 
 import UIKit
 
-class FullScheduleViewController: UIViewController {
+class FullScheduleViewController: UIViewController, MainTimerDelegate {
     
     @IBOutlet weak var largeDayLabel: UILabel!
+    @IBOutlet weak var clockLabel: UILabel!
+    
     var schedule : Schedule!
+    var timer : MainTimer!
     
     @IBOutlet weak var one: UIButton!
     @IBOutlet weak var two: UIButton!
@@ -25,12 +28,24 @@ class FullScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        schedule = timer.mySchedule
+        
         largeDayLabel.text = schedule.type
         allPeriodButtons = [one, two, three, four, five, six, seven, eight]
         
+        timer.delegate = self
         for i in 0..<schedule.periods.count {
             updateUI(forIndex: i)
         }
+    }
+    
+    func update() {
+        clockLabel.text = timer.currentTimer
+        allPeriodButtons[timer.cpi].setTitleColor(.red, for: .normal)
+        
+        let x = clockLabel.frame.midX
+        let y = allPeriodButtons[timer.cpi].frame.midY
+        clockLabel.center = CGPoint(x: x, y: y)
     }
     
     @IBAction func onTappedPeriod(_ sender: UIButton) {
