@@ -16,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if UserDefaults.standard.value(forKey: "DayTag") == nil {
+            UserDefaults.standard.setValue(0, forKey: "DayTag")
+        }
+        if UserDefaults.standard.value(forKey: "shortFri") == nil {
+            UserDefaults.standard.setValue(false, forKey: "shortFri")
+        }
+        
+        for i in 0..<8 {
+            UserDefaults.standard.set("No Class Input", forKey: "A" + String(i))
+            UserDefaults.standard.set("No Class Input", forKey: "B" + String(i))
+            UserDefaults.standard.set("No Class Input", forKey: "C" + String(i))
+            UserDefaults.standard.set("No Class Input", forKey: "BB" + String(i))
+            UserDefaults.standard.set("No Class Input", forKey: "CC" + String(i))
+        }
+        
         return true
     }
 

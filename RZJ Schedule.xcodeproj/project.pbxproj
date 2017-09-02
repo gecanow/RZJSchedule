@@ -14,6 +14,7 @@
 		88F3B9581F5A0F4400DEB4BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F3B9561F5A0F4400DEB4BB /* LaunchScreen.storyboard */; };
 		88F3B9631F5A0F4400DEB4BB /* RZJ_ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B9621F5A0F4400DEB4BB /* RZJ_ScheduleTests.swift */; };
 		88F3B96E1F5A0F4400DEB4BB /* RZJ_ScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B96D1F5A0F4400DEB4BB /* RZJ_ScheduleUITests.swift */; };
+		88F3B97E1F5A1E7900DEB4BB /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B97D1F5A1E7900DEB4BB /* Schedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		88F3B9691F5A0F4400DEB4BB /* RZJ ScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RZJ ScheduleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F3B96D1F5A0F4400DEB4BB /* RZJ_ScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZJ_ScheduleUITests.swift; sourceTree = "<group>"; };
 		88F3B96F1F5A0F4400DEB4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F3B97D1F5A1E7900DEB4BB /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				88F3B94D1F5A0F4400DEB4BB /* AppDelegate.swift */,
 				88F3B94F1F5A0F4400DEB4BB /* ViewController.swift */,
 				88F3B9511F5A0F4400DEB4BB /* Main.storyboard */,
+				88F3B97D1F5A1E7900DEB4BB /* Schedule.swift */,
 				88F3B9541F5A0F4400DEB4BB /* Assets.xcassets */,
 				88F3B9561F5A0F4400DEB4BB /* LaunchScreen.storyboard */,
 				88F3B9591F5A0F4400DEB4BB /* Info.plist */,
@@ -264,6 +267,7 @@
 			files = (
 				88F3B9501F5A0F4400DEB4BB /* ViewController.swift in Sources */,
 				88F3B94E1F5A0F4400DEB4BB /* AppDelegate.swift in Sources */,
+				88F3B97E1F5A1E7900DEB4BB /* Schedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
