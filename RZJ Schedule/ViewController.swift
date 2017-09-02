@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var c: UIButton!
     @IBOutlet weak var bb: UIButton!
     @IBOutlet weak var cc: UIButton!
+    @IBOutlet weak var currentDay: UIButton!
+    @IBOutlet weak var dayToolbar: UIView!
+    @IBOutlet weak var settingsToolbar: UIView!
+    
     
     let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     var weekday : String!
@@ -43,18 +47,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsToolbar.isHidden = true
         dayList = [a, b, c, bb, cc]
         let dayTag = UserDefaults.standard.value(forKey: "DayTag") as! Int
         dayList[dayTag].layer.borderWidth = 2
         
         setDate()
         setTodaysSchedule()
-        setSchedules()
         setTime()
+        
+        currentDay.setTitle(String(mySchedule.type), for: .normal)
         
         findCurrentPeriod()
     }
-    
     @IBAction func onTappedDay(_ sender: UIButton) {
         for d in dayList {
             d.layer.borderWidth = 0
@@ -62,7 +67,18 @@ class ViewController: UIViewController {
         
         UserDefaults.standard.setValue(sender.tag, forKey: "DayTag")
         sender.layer.borderWidth = 2
+        currentDay.setTitle(sender.titleLabel?.text, for: .normal)
+        dayToolbar.isHidden = true
+        
+        setTodaysSchedule()
     }
+    @IBAction func onTappedChangeDay(_ sender: Any) {
+        dayToolbar.isHidden = !dayToolbar.isHidden
+    }
+    @IBAction func onTappedSettings(_ sender: Any) {
+        settingsToolbar.isHidden = !settingsToolbar.isHidden
+    }
+    
     
     private func setDate() {
         let date = Date()
@@ -81,7 +97,6 @@ class ViewController: UIViewController {
     private func setTodaysSchedule() {
         let tag = UserDefaults.standard.value(forKey: "DayTag") as! Int
         mySchedule = classSchedules[tag]
-        
         // check for special schedule like extended tefillah!
     }
     private func findCurrentPeriod() {
@@ -171,52 +186,6 @@ class ViewController: UIViewController {
         return hString + mString + sString;
     }
     
-    /**
-     * Called each time the application is opened,
-     * and sets the schedules to the user-defined schedules
-     * that have already been set.
-     */
-    private func setSchedules() {
-        for i in 0..<8 {
-            UserDefaults.standard.set(classSchedules[0].periods[i], forKey: "A" + String(i))
-            UserDefaults.standard.set(classSchedules[1].periods[i], forKey: "B" + String(i))
-            UserDefaults.standard.set(classSchedules[2].periods[i], forKey: "C" + String(i))
-            UserDefaults.standard.set(classSchedules[3].periods[i], forKey: "BB" + String(i))
-            UserDefaults.standard.set(classSchedules[4].periods[i], forKey: "CC" + String(i))
-        }
-        
-        //    classesAFriday [0] = classesA [0];
-        //    classesAFriday [1] = classesA [1];
-        //    classesAFriday [2] = "Break";
-        //    classesAFriday [3] = classesA [2];
-        //    classesAFriday [4] = classesA [4];
-        //    classesAFriday [5] = classesA [3];
-        //    classesAFriday [6] = classesA [5];
-        //    classesAFriday [7] = classesA [7];
-        //
-        //    classesBBFriday [0] = classesBB [0];
-        //    classesBBFriday [1] = classesBB [1];
-        //    classesBBFriday [2] = "Break";
-        //    classesBBFriday [3] = classesBB [2];
-        //    classesBBFriday [4] = classesBB [4];
-        //    classesBBFriday [5] = classesBB [3];
-        //    classesBBFriday [6] = classesBB [5];
-        //    classesBBFriday [7] = classesBB [7];
-        //
-        //    classesCCFriday [0] = classesCC [0];
-        //    classesCCFriday [1] = classesCC [1];
-        //    classesCCFriday [2] = "Break";
-        //    classesCCFriday [3] = classesCC [2];
-        //    classesCCFriday [4] = classesCC [4];
-        //    classesCCFriday [5] = classesCC [3];
-        //    classesCCFriday [6] = classesCC [5];
-        //    classesCCFriday [7] = classesCC [7];
-    }
-    
-    /**
-     * Is called in the Start() function.
-     * Sets the period end times and the tefillah end times.
-     */
     func setTime() {
         if (weekday.lowercased() == LATE_START) {
             endHour [0] = 10; endMin [0] = 35 // end of first period
@@ -272,5 +241,14 @@ class ViewController: UIViewController {
         return FRIDAY_SCHEDULE
     }
     
+    //=====================================================
+    // Exchange of schedules when updating each 
+    // period in full schedule vc
+    //=====================================================
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! FullScheduleViewController
+        dvc.schedule = mySchedule
+    }
 }
 

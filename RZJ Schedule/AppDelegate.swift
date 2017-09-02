@@ -24,14 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.setValue(false, forKey: "shortFri")
         }
         
-        for i in 0..<8 {
-            UserDefaults.standard.set("No Class Input", forKey: "A" + String(i))
-            UserDefaults.standard.set("No Class Input", forKey: "B" + String(i))
-            UserDefaults.standard.set("No Class Input", forKey: "C" + String(i))
-            UserDefaults.standard.set("No Class Input", forKey: "BB" + String(i))
-            UserDefaults.standard.set("No Class Input", forKey: "CC" + String(i))
-        }
-        
         return true
     }
 
