@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var bb: UIButton!
     @IBOutlet weak var cc: UIButton!
     @IBOutlet weak var currentDay: UIButton!
-    @IBOutlet weak var dayToolbar: UIView!
     @IBOutlet weak var settingsToolbar: UIView!
     
     
@@ -30,10 +29,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeLeftText: UILabel!
     @IBOutlet weak var upNext: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var passingPeriodLabel: UILabel!
+    
     
     let selectedBorder = CGFloat(5)
     
-    var myTimer : MainTimer!
+    var myTimer = MainTimer(Schedule("None")) // just for initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,6 @@ class ViewController: UIViewController {
         
         setDate()
         
-        myTimer = MainTimer(classSchedules[0]) // just for initialization
         NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name(rawValue: timerKey), object: nil)
         
         setTodaysSchedule()
@@ -111,6 +111,7 @@ class ViewController: UIViewController {
         period.text = myTimer.currentPeriod
         upNext.text = myTimer.upNext
         timeLeftText.text = myTimer.currentTimer
+        passingPeriodLabel.text = myTimer.myPassingPeriod.calculateTime()
     }
     
     //=====================================================

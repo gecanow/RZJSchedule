@@ -17,6 +17,7 @@
 		88F3B97E1F5A1E7900DEB4BB /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B97D1F5A1E7900DEB4BB /* Schedule.swift */; };
 		88F3B9801F5A496300DEB4BB /* FullScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B97F1F5A496300DEB4BB /* FullScheduleViewController.swift */; };
 		88F3B9821F5B232F00DEB4BB /* MainTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B9811F5B232F00DEB4BB /* MainTimer.swift */; };
+		88F3B9841F5C40A100DEB4BB /* PassingPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3B9831F5C40A100DEB4BB /* PassingPeriod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		88F3B97D1F5A1E7900DEB4BB /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		88F3B97F1F5A496300DEB4BB /* FullScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScheduleViewController.swift; sourceTree = "<group>"; };
 		88F3B9811F5B232F00DEB4BB /* MainTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTimer.swift; sourceTree = "<group>"; };
+		88F3B9831F5C40A100DEB4BB /* PassingPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingPeriod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				88F3B97F1F5A496300DEB4BB /* FullScheduleViewController.swift */,
 				88F3B97D1F5A1E7900DEB4BB /* Schedule.swift */,
 				88F3B9811F5B232F00DEB4BB /* MainTimer.swift */,
+				88F3B9831F5C40A100DEB4BB /* PassingPeriod.swift */,
 				88F3B9511F5A0F4400DEB4BB /* Main.storyboard */,
 				88F3B9541F5A0F4400DEB4BB /* Assets.xcassets */,
 				88F3B9561F5A0F4400DEB4BB /* LaunchScreen.storyboard */,
@@ -275,6 +278,7 @@
 				88F3B9821F5B232F00DEB4BB /* MainTimer.swift in Sources */,
 				88F3B9501F5A0F4400DEB4BB /* ViewController.swift in Sources */,
 				88F3B94E1F5A0F4400DEB4BB /* AppDelegate.swift in Sources */,
+				88F3B9841F5C40A100DEB4BB /* PassingPeriod.swift in Sources */,
 				88F3B97E1F5A1E7900DEB4BB /* Schedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,12 +24,14 @@ class MainTimer: NSObject {
     var cpi = -1 //current period index
     
     var mySchedule : Schedule!
+    var myPassingPeriod : PassingPeriod!
     
     convenience init(_ s: Schedule) {
         self.init()
         setTime()
         
         mySchedule = s
+        myPassingPeriod = PassingPeriod(endMinArr: endMin, i: cpi)
         _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.findCurrentPeriod), userInfo: nil, repeats: true)
     }
     
@@ -66,15 +68,12 @@ class MainTimer: NSObject {
             }
         }
         
-        // the passing period timer:
-        //PassingPeriod.index = index-1;
-        
         // Sets the text to display what period is now, what period is next,
         // and how much time there is left
         if (hour < tefillahHourEnd || (hour == tefillahHourEnd && minute < tefillahMinuteEnd)) {
             currentPeriod = "Tefillah";
             upNext = "First Period Class: " + mySchedule.getSchedule(weekday)[0]
-            currentTimer = "Time Left: " + timeLeft(tefillahHourEnd, tefillahMinuteEnd)
+            currentTimer = timeLeft(tefillahHourEnd, tefillahMinuteEnd)
             
             
             cpi = -1
@@ -101,6 +100,9 @@ class MainTimer: NSObject {
             
             cpi = -1
         }
+        
+        // the passing period timer:
+        myPassingPeriod.i = cpi //-1?
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: timerKey), object: self)
     }

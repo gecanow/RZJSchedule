@@ -22,37 +22,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rzj" translatesAutoresizingMaskIntoConstraints="NO" id="idP-ZX-ctW">
-                                <rect key="frame" x="-21" y="0.0" width="423" height="667"/>
+                            <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rzj-22" translatesAutoresizingMaskIntoConstraints="NO" id="idP-ZX-ctW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.79739538509999996" green="1" blue="0.99758628250000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="176" translatesAutoresizingMaskIntoConstraints="NO" id="fEc-rX-ESg">
-                                <rect key="frame" x="183" y="20" width="176" height="26"/>
+                                <rect key="frame" x="183" y="20" width="158" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="RUK-si-TQj"/>
+                                    <constraint firstAttribute="width" constant="158" id="Eah-Rf-wfF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Period" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnX-sH-9FE">
-                                <rect key="frame" x="16" y="141" width="343" height="146"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Passing Period 00:00" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqP-nd-LWA">
+                                <rect key="frame" x="17" y="367" width="342" height="46"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="31"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXX-VU-Mfr">
-                                <rect key="frame" x="16" y="295" width="343" height="77"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="80"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Up Next" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXa-kZ-1Ou">
-                                <rect key="frame" x="16" y="380" width="343" height="33"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7g-Rx-QwW">
                                 <rect key="frame" x="17" y="521" width="343" height="146"/>
@@ -257,19 +250,44 @@
                                     <constraint firstAttribute="height" constant="113" id="e4x-nG-2UB"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JhC-gh-Hwe">
+                                <rect key="frame" x="16" y="141" width="344" height="218"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Period" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnX-sH-9FE">
+                                        <rect key="frame" x="0.0" y="8" width="344" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXX-VU-Mfr">
+                                        <rect key="frame" x="0.0" y="62" width="344" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="80"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Up Next" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXa-kZ-1Ou">
+                                        <rect key="frame" x="-1" y="163" width="345" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fEc-rX-ESg" firstAttribute="top" secondItem="Nbw-Bw-Jre" secondAttribute="bottom" id="4Gf-eD-5uA"/>
+                            <constraint firstAttribute="trailing" secondItem="JhC-gh-Hwe" secondAttribute="trailing" constant="15" id="6bA-bL-k6O"/>
                             <constraint firstItem="g8C-EJ-qNM" firstAttribute="top" secondItem="Nbw-Bw-Jre" secondAttribute="bottom" id="8Mf-Oc-VJe"/>
                             <constraint firstItem="g8C-EJ-qNM" firstAttribute="leading" secondItem="ucZ-iX-XJ7" secondAttribute="leadingMargin" id="90n-pT-3I1"/>
-                            <constraint firstItem="fEc-rX-ESg" firstAttribute="trailing" secondItem="ucZ-iX-XJ7" secondAttribute="trailingMargin" id="E6N-Ay-1ic"/>
-                            <constraint firstItem="XXa-kZ-1Ou" firstAttribute="centerX" secondItem="ucZ-iX-XJ7" secondAttribute="centerX" id="Q0u-QY-NhC"/>
-                            <constraint firstItem="oXX-VU-Mfr" firstAttribute="centerX" secondItem="ucZ-iX-XJ7" secondAttribute="centerX" id="Sib-hf-caN"/>
-                            <constraint firstItem="XXa-kZ-1Ou" firstAttribute="top" secondItem="oXX-VU-Mfr" secondAttribute="bottom" constant="8" id="X5y-lY-WJJ"/>
-                            <constraint firstItem="CnX-sH-9FE" firstAttribute="centerX" secondItem="ucZ-iX-XJ7" secondAttribute="centerX" id="k0x-xJ-2mC"/>
-                            <constraint firstItem="CnX-sH-9FE" firstAttribute="top" secondItem="g8C-EJ-qNM" secondAttribute="bottom" constant="8" id="ohe-OC-TnY"/>
-                            <constraint firstItem="oXX-VU-Mfr" firstAttribute="top" secondItem="CnX-sH-9FE" secondAttribute="bottom" constant="8" id="zdz-6G-kQU"/>
+                            <constraint firstItem="JhC-gh-Hwe" firstAttribute="top" secondItem="g8C-EJ-qNM" secondAttribute="bottom" constant="8" id="Ye9-ts-WUb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fEc-rX-ESg" secondAttribute="trailing" constant="18" id="dHt-cT-27h"/>
+                            <constraint firstItem="BqP-nd-LWA" firstAttribute="top" secondItem="JhC-gh-Hwe" secondAttribute="bottom" constant="8" id="mjy-59-1vy"/>
+                            <constraint firstItem="JhC-gh-Hwe" firstAttribute="leading" secondItem="ucZ-iX-XJ7" secondAttribute="leading" constant="16" id="rTP-IC-dmr"/>
+                            <constraint firstItem="JhC-gh-Hwe" firstAttribute="centerX" secondItem="ucZ-iX-XJ7" secondAttribute="centerX" id="yyq-bK-zhR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -280,7 +298,7 @@
                         <outlet property="cc" destination="4jZ-Ad-pMs" id="y6e-Yy-ehi"/>
                         <outlet property="currentDay" destination="wiQ-n2-wC2" id="bqc-z5-IcV"/>
                         <outlet property="dateLabel" destination="fEc-rX-ESg" id="dO7-g9-hYW"/>
-                        <outlet property="dayToolbar" destination="Gtx-qC-jcD" id="4Ru-iG-iis"/>
+                        <outlet property="passingPeriodLabel" destination="BqP-nd-LWA" id="lnw-dJ-XXG"/>
                         <outlet property="period" destination="CnX-sH-9FE" id="7Fb-aM-oWb"/>
                         <outlet property="settingsToolbar" destination="sz5-IQ-ECI" id="xiu-q9-SJ5"/>
                         <outlet property="timeLeftText" destination="oXX-VU-Mfr" id="r0H-G9-EnS"/>
@@ -303,23 +321,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rzj" translatesAutoresizingMaskIntoConstraints="NO" id="NXJ-K1-37T">
-                                <rect key="frame" x="-20" y="0.0" width="419" height="667"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rzj-22" translatesAutoresizingMaskIntoConstraints="NO" id="NXJ-K1-37T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVU-qg-Rmf">
-                                <rect key="frame" x="304" y="20" width="55" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BB" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKu-3v-LYE">
+                                <rect key="frame" x="16" y="20" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="15"/>
-                                <state key="normal" title="&lt; Back">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onTappedExit:" destination="Kln-eL-G2e" eventType="touchUpInside" id="Xbl-cP-VTy"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="53"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcZ-sC-126">
-                                <rect key="frame" x="16" y="218" width="343" height="424"/>
+                                <rect key="frame" x="16" y="128" width="359" height="424"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGq-r5-9fd">
@@ -411,29 +430,24 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKo-ck-kK6">
-                                        <rect key="frame" x="291" y="13" width="52" height="35"/>
+                                        <rect key="frame" x="291" y="13" width="68" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKu-3v-LYE">
-                                <rect key="frame" x="92" y="20" width="190" height="190"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVU-qg-Rmf">
+                                <rect key="frame" x="328" y="628" width="31" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="115"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="95"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
+                                <state key="normal" title="&lt; Back" image="full-icon">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTappedExit:" destination="Kln-eL-G2e" eventType="touchUpInside" id="Xbl-cP-VTy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -459,7 +473,7 @@
     </scenes>
     <resources>
         <image name="full-icon" width="1024" height="1024"/>
-        <image name="rzj" width="900" height="900"/>
+        <image name="rzj-22" width="805" height="896"/>
         <image name="settings-icon-cropped" width="1811" height="1816"/>
     </resources>
 </document>
