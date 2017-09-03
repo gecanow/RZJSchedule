@@ -73,23 +73,23 @@ class MainTimer: NSObject {
         // and how much time there is left
         if (hour < tefillahHourEnd || (hour == tefillahHourEnd && minute < tefillahMinuteEnd)) {
             currentPeriod = "Tefillah";
-            upNext = "First Period Class: " + mySchedule.periods[0]
+            upNext = "First Period Class: " + mySchedule.getSchedule(weekday)[0]
             currentTimer = "Time Left: " + timeLeft(tefillahHourEnd, tefillahMinuteEnd)
             
             
             cpi = -1
         } else if (hour < endHour [0]) {
-            currentPeriod = mySchedule.periods[0]
-            upNext = "Up Next: " + mySchedule.periods[1]
+            currentPeriod = mySchedule.getSchedule(weekday)[0]
+            upNext = "Up Next: " + mySchedule.getSchedule(weekday)[1]
             currentTimer = timeLeft(endHour[0], endMin[0])
             
             cpi = 0
         } else if (index < mySchedule.periods.count) {
-            currentPeriod = mySchedule.periods[index]
+            currentPeriod = mySchedule.getSchedule(weekday)[index]
             cpi = index
             
             if (index+1 < mySchedule.periods.count) {
-                upNext = "Up Next: " + mySchedule.periods[index+1]
+                upNext = "Up Next: " + mySchedule.getSchedule(weekday)[index+1]
             } else {
                 upNext = "Up Next: School's Over";
             }
@@ -178,7 +178,7 @@ class MainTimer: NSObject {
             tefillahHourEnd = 8
             tefillahMinuteEnd = 57
         } else {
-            endHour [0] = 9; endMin [0] = 48 // end of first period
+            endHour [0] = 9; endMin[0] = 48 // end of first period
             endHour [1] = 10; endMin [1] = 45 // end of second period
             endHour [2] = 11; endMin [2] = 42 // end of third period
             endHour [3] = 12; endMin [3] = 24 // end of lunch period

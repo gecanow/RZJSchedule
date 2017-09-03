@@ -10,6 +10,7 @@ import UIKit
 
 class Schedule: NSObject {
     var type : String!
+    
     var periods = ["No Class Input", "No Class Input", "No Class Input",
                    "No Class Input", "No Class Input", "No Class Input",
                    "No Class Input", "No Class Input"]
@@ -29,37 +30,23 @@ class Schedule: NSObject {
         }
     }
     
-    /**
-     * Called each time the application is opened,
-     * and sets the schedules to the user-defined schedules
-     * that have already been set.
-     */
-    private func setSpecialSchedules() {
-        //    classesAFriday [0] = classesA [0];
-        //    classesAFriday [1] = classesA [1];
-        //    classesAFriday [2] = "Break";
-        //    classesAFriday [3] = classesA [2];
-        //    classesAFriday [4] = classesA [4];
-        //    classesAFriday [5] = classesA [3];
-        //    classesAFriday [6] = classesA [5];
-        //    classesAFriday [7] = classesA [7];
-        //
-        //    classesBBFriday [0] = classesBB [0];
-        //    classesBBFriday [1] = classesBB [1];
-        //    classesBBFriday [2] = "Break";
-        //    classesBBFriday [3] = classesBB [2];
-        //    classesBBFriday [4] = classesBB [4];
-        //    classesBBFriday [5] = classesBB [3];
-        //    classesBBFriday [6] = classesBB [5];
-        //    classesBBFriday [7] = classesBB [7];
-        //
-        //    classesCCFriday [0] = classesCC [0];
-        //    classesCCFriday [1] = classesCC [1];
-        //    classesCCFriday [2] = "Break";
-        //    classesCCFriday [3] = classesCC [2];
-        //    classesCCFriday [4] = classesCC [4];
-        //    classesCCFriday [5] = classesCC [3];
-        //    classesCCFriday [6] = classesCC [5];
-        //    classesCCFriday [7] = classesCC [7];
+    func getSchedule(_ weekday: Int) -> [String] {
+        if weekday == 6 {
+            return friday(forArr: periods)
+        } else {
+            return periods
+        }
+    }
+    func getScheduleTitles(_ weekday: Int) -> [String] {
+        if weekday == 6 {
+            return friday(forArr: periodTitles)
+        } else {
+            return periodTitles
+        }
+    }
+    
+    private func friday(forArr: [String]) -> [String] {
+        return [forArr[0], forArr[1], "Break", forArr[2], forArr[4],
+        forArr[3], forArr[5], forArr[7]]
     }
 }

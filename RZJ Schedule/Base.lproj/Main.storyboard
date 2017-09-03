@@ -27,9 +27,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.79739538509999996" green="1" blue="0.99758628250000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEc-rX-ESg">
-                                <rect key="frame" x="55" y="20" width="304" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="176" translatesAutoresizingMaskIntoConstraints="NO" id="fEc-rX-ESg">
+                                <rect key="frame" x="183" y="20" width="176" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="RUK-si-TQj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -189,19 +191,9 @@
                                     </button>
                                 </subviews>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g8C-EJ-qNM">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8C-EJ-qNM">
                                 <rect key="frame" x="16" y="20" width="31" height="113"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-GO-Y5r">
-                                        <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Settings" image="settings-1">
-                                            <color key="titleColor" red="0.79739538509999996" green="1" blue="0.99758628250000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onTappedSettings:" destination="rfC-53-8NF" eventType="touchUpInside" id="dIV-xz-oJG"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sz5-IQ-ECI">
                                         <rect key="frame" x="0.0" y="33" width="237" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -245,25 +237,38 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-GO-Y5r">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Settings" image="settings-icon-cropped">
+                                            <color key="titleColor" red="0.79739538509999996" green="1" blue="0.99758628250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTappedSettings:" destination="rfC-53-8NF" eventType="touchUpInside" id="dIV-xz-oJG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="113" id="T16-Ea-qRc"/>
+                                    <constraint firstAttribute="width" constant="31" id="Jxb-hS-J6f"/>
+                                    <constraint firstAttribute="height" constant="113" id="e4x-nG-2UB"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="g8C-EJ-qNM" firstAttribute="leading" secondItem="ucZ-iX-XJ7" secondAttribute="leadingMargin" id="1Ib-Nq-24A"/>
-                            <constraint firstItem="CnX-sH-9FE" firstAttribute="top" secondItem="g8C-EJ-qNM" secondAttribute="bottom" constant="8" id="PUM-3S-DLE"/>
+                            <constraint firstItem="fEc-rX-ESg" firstAttribute="top" secondItem="Nbw-Bw-Jre" secondAttribute="bottom" id="4Gf-eD-5uA"/>
+                            <constraint firstItem="g8C-EJ-qNM" firstAttribute="top" secondItem="Nbw-Bw-Jre" secondAttribute="bottom" id="8Mf-Oc-VJe"/>
+                            <constraint firstItem="g8C-EJ-qNM" firstAttribute="leading" secondItem="ucZ-iX-XJ7" secondAttribute="leadingMargin" id="90n-pT-3I1"/>
+                            <constraint firstItem="fEc-rX-ESg" firstAttribute="trailing" secondItem="ucZ-iX-XJ7" secondAttribute="trailingMargin" id="E6N-Ay-1ic"/>
                             <constraint firstItem="XXa-kZ-1Ou" firstAttribute="centerX" secondItem="ucZ-iX-XJ7" secondAttribute="centerX" id="Q0u-QY-NhC"/>
                             <constraint firstItem="oXX-VU-Mfr" firstAttribute="centerX" secondItem="ucZ-iX-XJ7" secondAttribute="centerX" id="Sib-hf-caN"/>
                             <constraint firstItem="XXa-kZ-1Ou" firstAttribute="top" secondItem="oXX-VU-Mfr" secondAttribute="bottom" constant="8" id="X5y-lY-WJJ"/>
                             <constraint firstItem="CnX-sH-9FE" firstAttribute="centerX" secondItem="ucZ-iX-XJ7" secondAttribute="centerX" id="k0x-xJ-2mC"/>
-                            <constraint firstItem="g8C-EJ-qNM" firstAttribute="top" secondItem="Nbw-Bw-Jre" secondAttribute="bottom" id="tUp-TF-Dvr"/>
+                            <constraint firstItem="CnX-sH-9FE" firstAttribute="top" secondItem="g8C-EJ-qNM" secondAttribute="bottom" constant="8" id="ohe-OC-TnY"/>
                             <constraint firstItem="oXX-VU-Mfr" firstAttribute="top" secondItem="CnX-sH-9FE" secondAttribute="bottom" constant="8" id="zdz-6G-kQU"/>
                         </constraints>
                     </view>
@@ -455,6 +460,6 @@
     <resources>
         <image name="full-icon" width="1024" height="1024"/>
         <image name="rzj" width="900" height="900"/>
-        <image name="settings-1" width="2000" height="2000"/>
+        <image name="settings-icon-cropped" width="1811" height="1816"/>
     </resources>
 </document>

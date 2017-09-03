@@ -53,12 +53,11 @@ class FullScheduleViewController: UIViewController {
     
     @IBAction func onTappedPeriod(_ sender: UIButton) {
         let index = (sender as AnyObject).tag!
-        let t = schedule.periodTitles[index]
-        let m = "Update Class"
-        let alertController = UIAlertController(title: t, message: m, preferredStyle: .alert)
+        let t = "Update \(schedule.getScheduleTitles(timer.weekday)[index])"
+        let alertController = UIAlertController(title: t, message: nil, preferredStyle: .alert)
         
         alertController.addTextField { (tf) in
-            tf.text = self.schedule.periods[index]
+            tf.text = self.schedule.getSchedule(self.timer.weekday)[index]
         }
         
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
@@ -73,7 +72,7 @@ class FullScheduleViewController: UIViewController {
     }
     
     func updateUI(forIndex: Int) {
-        let myTitle = schedule.periodTitles[forIndex] + ": " + schedule.periods[forIndex]
+        let myTitle = schedule.getScheduleTitles(timer.weekday)[forIndex] + ": " + schedule.getSchedule(timer.weekday)[forIndex]
         allPeriodButtons[forIndex].setTitle(myTitle, for: .normal)
     }
     

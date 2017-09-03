@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var dayList : [UIButton]!
+    var dayListCenters : [CGPoint]!
+    
     @IBOutlet weak var a: UIButton!
     @IBOutlet weak var b: UIButton!
     @IBOutlet weak var c: UIButton!
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
         
         settingsToolbar.isHidden = true
         dayList = [a, b, c, bb, cc]
+        dayListCenters = [a.center, b.center, c.center, bb.center, cc.center]
         
         setDate()
         
@@ -54,27 +57,32 @@ class ViewController: UIViewController {
         }
         
         UserDefaults.standard.setValue(sender.tag, forKey: "DayTag")
-        dayToolbar.isHidden = true
-        
         setTodaysSchedule()
     }
     
     @IBAction func onTappedChangeDay(_ sender: Any) {
-        dayToolbar.isHidden = !dayToolbar.isHidden
-        
         // animate it!!!!!
-        if !dayToolbar.isHidden {
-            for d in dayList {
-                let ogCenter = d.center
-                d.center = (sender as AnyObject).center
-                UIView.animate(withDuration: 0.5, animations: {
-                    d.center = ogCenter
-                })
-            }
+        for d in 0..<dayList.count {
+            
+            UIView.animate(withDuration: 0.5, animations: { 
+                if self.dayList[d].center == self.dayListCenters[d] {
+                    self.dayList[d].center = (sender as! UIButton).center
+                } else {
+                    self.dayList[d].center = self.dayListCenters[d]
+                }
+            })
+            
         }
     }
     
     @IBAction func onTappedSettings(_ sender: Any) {
+        UIView.animate(withDuration: 0.25, animations: {
+            if !self.settingsToolbar.isHidden {
+                (sender as! UIButton).transform = .identity
+            } else {
+               (sender as! UIButton).transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
+            }
+        })
         settingsToolbar.isHidden = !settingsToolbar.isHidden
     }
     
@@ -96,7 +104,7 @@ class ViewController: UIViewController {
         let month = String(calendar.component(.month, from: date))
         let day = String(calendar.component(.day, from: date))
         let year = String(calendar.component(.year, from: date))
-        dateLabel.text = weekday + " " + month + "." + day + "." + year
+        dateLabel.text = weekday + "\n" + month + "." + day + "." + year
     }
     
     func update() {
