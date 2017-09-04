@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //========//
+    // FIELDS //
+    //========//
+    
     var dayList : [UIButton]!
     var dayListCenters : [CGPoint]!
     
@@ -29,13 +33,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var passingPeriodLabel: UILabel!
     
+    @IBOutlet weak var shortFriSwitch: UISwitch!
+    @IBOutlet weak var extendTefillahSwitch: UISwitch!
     
     let selectedBorder = CGFloat(5)
     
     var myTimer = MainTimer(Schedule("None")) // just for initialization
     
+    //===============//
+    // VIEW DID LOAD //
+    //===============//
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        shortFriSwitch.isOn = UserDefaults.standard.value(forKey: "shortFri") as! Bool
+        extendTefillahSwitch.isOn = UserDefaults.standard.value(forKey: "extendedTefillah") as! Bool
         
         settingsToolbar.isHidden = true
         dayList = [a, b, c, bb, cc]
@@ -44,38 +56,63 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name(rawValue: timerKey), object: nil)
         
         setTodaysSchedule()
+    }
+    
+    //--------------------------------------------------
+    // Helper function for the ViewDidLoad:
+    // Sets up the proper type of day
+    //--------------------------------------------------
+    private func setTodaysSchedule() {
+        let tag = UserDefaults.standard.value(forKey: "DayTag") as! Int
+        myTimer.mySchedule = classSchedules[tag]
+        dateLabel.text = myTimer.dateText
         
+        dayList[tag].layer.borderWidth = selectedBorder
         currentDay.setTitle(String(myTimer.mySchedule.type), for: .normal)
     }
+    
+    //--------------------------------------------------
+    // Responsible for changing the type of day
+    // when a day button is tapped
+    //--------------------------------------------------
     @IBAction func onTappedDay(_ sender: UIButton) {
-        for d in dayList {
-            d.layer.borderWidth = 1
+        for d in 0..<dayList.count {
+            dayList[d].layer.borderWidth = 1
+            animateDayButtonAt(i: d)
         }
-        
         UserDefaults.standard.setValue(sender.tag, forKey: "DayTag")
         setTodaysSchedule()
     }
     
+    //--------------------------------------------------
+    // Animates the day buttons to collapse or expand
+    // with help from the helper function,
+    // animateDayButton(: Int)
+    //--------------------------------------------------
     @IBAction func onTappedChangeDay(_ sender: Any) {
-        // animate it!!!!!
         for d in 0..<dayList.count {
-            
-            if dayList[d].center == dayListCenters[d] {
-                UIView.animate(withDuration: 0.5, animations: { 
-                    self.dayList[d].center = (sender as! UIButton).center
-                }, completion: { (void) in
-                    self.dayList[d].isHidden = true
-                })
-            } else {
-                self.dayList[d].isHidden = false
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.dayList[d].center = self.dayListCenters[d]
-                })
-            }
-            
+            animateDayButtonAt(i: d)
+        }
+    }
+    private func animateDayButtonAt(i: Int) {
+        if dayList[i].center == dayListCenters[i] {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.dayList[i].center = self.currentDay.center
+            }, completion: { (void) in
+                self.dayList[i].isHidden = true
+            })
+        } else {
+            self.dayList[i].isHidden = false
+            UIView.animate(withDuration: 0.5, animations: {
+                self.dayList[i].center = self.dayListCenters[i]
+            })
         }
     }
     
+    //--------------------------------------------------
+    // Animates the settings buttons and reveals or
+    // hides the settings toolbar
+    //--------------------------------------------------
     @IBAction func onTappedSettings(_ sender: Any) {
         UIView.animate(withDuration: 0.25, animations: {
             if !self.settingsToolbar.isHidden {
@@ -87,27 +124,25 @@ class ViewController: UIViewController {
         settingsToolbar.isHidden = !settingsToolbar.isHidden
     }
     
+    //--------------------------------------------------
+    // Resets the timer's time when either the short
+    // friday switch is switched or the extended
+    // tefillah switch is switched
+    //--------------------------------------------------
     @IBAction func onTappedShortFridaySwitch(_ sender: UISwitch) {
         // MAKE SURE THIS WORKS!!!!!
         UserDefaults.standard.set(sender.isOn, forKey: "shortFri")
         myTimer.setTime()
     }
-    
     @IBAction func onTappedExtendTefillahSwitch(_ sender: UISwitch) {
-        // extend that tefillah!
+        UserDefaults.standard.set(sender.isOn, forKey: "extendedTefillah")
+        myTimer.setTime()
     }
     
-    private func setTodaysSchedule() {
-        let tag = UserDefaults.standard.value(forKey: "DayTag") as! Int
-        myTimer.mySchedule = classSchedules[tag]
-        dateLabel.text = myTimer.dateText
-        
-        dayList[tag].layer.borderWidth = selectedBorder
-        currentDay.setTitle(String(myTimer.mySchedule.type), for: .normal)
-        
-        // also check for weird schedules!
-    }
-    
+    //--------------------------------------------------
+    // Is called when NSNotificationCenter recieves a
+    // notification (timer updated -> update() called)
+    //--------------------------------------------------
     func update() {
         period.text = myTimer.currentPeriod
         upNext.text = myTimer.upNext
@@ -116,10 +151,10 @@ class ViewController: UIViewController {
         dateLabel.text = myTimer.dateText
     }
     
-    //=====================================================
-    // Exchange of schedules when updating each 
-    // period in full schedule vc
-    //=====================================================
+    //--------------------------------------------------
+    // Exchange of timer reference when segue to full
+    // schedule vc is tapped
+    //--------------------------------------------------
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! FullScheduleViewController

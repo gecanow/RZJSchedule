@@ -10,6 +10,10 @@ import UIKit
 
 class FullScheduleViewController: UIViewController {
     
+    //========//
+    // FIELDS //
+    //========//
+    
     @IBOutlet weak var largeDayLabel: UILabel!
     @IBOutlet weak var clockLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -27,6 +31,9 @@ class FullScheduleViewController: UIViewController {
     @IBOutlet weak var eight: UIButton!
     var allPeriodButtons : [UIButton]!
     
+    //===============//
+    // VIEW DID LOAD //
+    //===============//
     override func viewDidLoad() {
         super.viewDidLoad()
         schedule = timer.mySchedule
@@ -36,16 +43,19 @@ class FullScheduleViewController: UIViewController {
         allPeriodButtons = [one, two, three, four, five, six, seven, eight]
         
         NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name(rawValue: timerKey), object: nil)
-        for i in 0..<schedule.periods.count {
-            updateUI(forIndex: i)
-        }
+        updateUI()
     }
     
+    //--------------------------------------------------
+    // Is called when NSNotificationCenter recieves a
+    // notification (timer updated -> update() called)
+    //--------------------------------------------------
     func update() {
-        clockLabel.text = timer.currentTimer
         dateLabel.text = timer.dateText
+        clockLabel.text = ""
         
         if timer.cpi >= 0 && timer.cpi <= allPeriodButtons.count {
+            clockLabel.text = timer.currentTimer
             allPeriodButtons[timer.cpi].setTitleColor(.red, for: .normal)
             
             let x = clockLabel.frame.midX
@@ -54,6 +64,10 @@ class FullScheduleViewController: UIViewController {
         }
     }
     
+    //--------------------------------------------------
+    // Sends an alert w/ a textfield to update the name
+    // of the class during a certain period
+    //--------------------------------------------------
     @IBAction func onTappedPeriod(_ sender: UIButton) {
         let index = (sender as AnyObject).tag!
         let t = "Update \(schedule.getScheduleTitles(timer.weekday)[index])"
@@ -70,18 +84,30 @@ class FullScheduleViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    //--------------------------------------------------
+    // Handles seguing to the main vc
+    //--------------------------------------------------
     @IBAction func onTappedExit(_ sender: Any) {
         self.performSegue(withIdentifier: "unwindFromFull", sender: self)
     }
     
-    func updateUI(forIndex: Int) {
-        let myTitle = schedule.getScheduleTitles(timer.weekday)[forIndex] + ": " + schedule.getSchedule(timer.weekday)[forIndex]
-        allPeriodButtons[forIndex].setTitle(myTitle, for: .normal)
+    //--------------------------------------------------
+    // Updates the entire UI to display the correct
+    // period titles and classes
+    //--------------------------------------------------
+    func updateUI() {
+        for forIndex in 0..<schedule.periods.count {
+            let myTitle = schedule.getScheduleTitles(timer.weekday)[forIndex] + ": " + schedule.getSchedule(timer.weekday)[forIndex]
+            allPeriodButtons[forIndex].setTitle(myTitle, for: .normal)
+        }
     }
     
+    //--------------------------------------------------
+    // Resets the classes for a single period
+    //--------------------------------------------------
     func resetPeriod(_ num: Int, withStr: String) {
         schedule.periods[num] = withStr
         UserDefaults.standard.setValue(withStr, forKey: schedule.type + String(num))
-        updateUI(forIndex: num)
+        updateUI()
     }
 }

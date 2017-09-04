@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.value(forKey: "shortFri") == nil {
             UserDefaults.standard.setValue(false, forKey: "shortFri")
         }
+        if UserDefaults.standard.value(forKey: "extendedTefillah") == nil {
+            UserDefaults.standard.setValue(false, forKey: "extendedTefillah")
+        }
         
         return true
     }

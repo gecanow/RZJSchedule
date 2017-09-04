@@ -9,13 +9,20 @@
 import UIKit
 
 class Schedule: NSObject {
-    var type : String!
     
+    //========//
+    // FIELDS //
+    //========//
+    
+    var type : String!
     var periods = ["No Class Input", "No Class Input", "No Class Input",
                    "No Class Input", "No Class Input", "No Class Input",
                    "No Class Input", "No Class Input"]
     var periodTitles = ["Period 1", "Period 2", "Period 3","Lunch", "Period 4", "Period 5", "Mincha", "Period 6"]
     
+    //==================//
+    // CONVENIENCE INIT //
+    //==================//
     convenience init(_ kind: String) {
         self.init()
         type = kind
@@ -30,6 +37,9 @@ class Schedule: NSObject {
         }
     }
     
+    //--------------------------------------------------
+    // Returns the proper schedules given the weekday
+    //--------------------------------------------------
     func getSchedule(_ weekday: Int) -> [String] {
         if weekday == 6 {
             return friday(forArr: periods)
@@ -45,6 +55,9 @@ class Schedule: NSObject {
         }
     }
     
+    //--------------------------------------------------
+    // Reorders arr forArr to the friday order
+    //--------------------------------------------------
     private func friday(forArr: [String]) -> [String] {
         return [forArr[0], forArr[1], "Break", forArr[2], forArr[4],
         forArr[3], forArr[5], forArr[7]]

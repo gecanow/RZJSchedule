@@ -8,9 +8,13 @@
 
 import UIKit
 
-let timerKey = "com.EcaKnowGames.timerNotificationKey"
+let timerKey = "com.EcaKnowGames.timerNotificationKey" // for NSNotificationCenter
 
 class MainTimer: NSObject {
+    
+    //========//
+    // FIELDS //
+    //========//
     
     let weekdays = ["", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     var dateText = ""
@@ -29,6 +33,9 @@ class MainTimer: NSObject {
     var mySchedule : Schedule!
     var myPassingPeriod : PassingPeriod!
     
+    //==================//
+    // CONVENIENCE INIT //
+    //==================//
     convenience init(_ s: Schedule) {
         self.init()
         setTime()
@@ -38,6 +45,10 @@ class MainTimer: NSObject {
         _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.findCurrentPeriod), userInfo: nil, repeats: true)
     }
     
+    //--------------------------------------------------
+    // Sets the current date, including:
+    // weekday, hour, minute, second, month, day, year
+    //--------------------------------------------------
     func setDate() {
         let date = Date()
         let calendar = Calendar.current
@@ -52,6 +63,9 @@ class MainTimer: NSObject {
         dateText = weekdays[weekday] + "\n" + month + "." + day + "." + year
     }
     
+    //--------------------------------------------------
+    // Find the current period using the current time
+    //--------------------------------------------------
     @objc private func findCurrentPeriod() {
         //set the proper Date
         setDate()
@@ -109,16 +123,17 @@ class MainTimer: NSObject {
             cpi = -1
         }
         
+        //*************************************
         // the passing period timer:
-        myPassingPeriod.i = cpi //-1?
+        myPassingPeriod.i = index
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: timerKey), object: self)
     }
     
-    /**
-     * Returns a string representation of how much time is left
-     * in the current period.
-     */
+    //--------------------------------------------------
+    // Returns a string representation of how much time
+    // is left in the current period.
+    //--------------------------------------------------
     private func timeLeft(_ hourEnd: Int, _ minuteEnd: Int) -> String {
         var rHour = hourEnd - hour
         var rMin = minuteEnd - minute - 1
@@ -153,8 +168,14 @@ class MainTimer: NSObject {
         return hString + mString + sString
     }
     
+    //--------------------------------------------------
+    // Sets the ending times, w/ helper function
+    // setExtendedTime when extended tefillah is true
+    //--------------------------------------------------
     func setTime() {
-        if (weekday == LATE_START) {
+        if (UserDefaults.standard.value(forKey: "extendedTefillah") as! Bool) {
+            setExtendedTimes()
+        } else if (weekday == LATE_START) {
             endHour [0] = 10; endMin [0] = 35 // end of first period
             endHour [1] = 11; endMin [1] = 28 // end of second period
             endHour [2] = 12; endMin [2] = 21 // end of third period
@@ -198,6 +219,46 @@ class MainTimer: NSObject {
             endHour [7] = 15; endMin [7] = 27 // end of sixth period
             tefillahHourEnd = 8
             tefillahMinuteEnd = 51
+        }
+    }
+    private func setExtendedTimes() {
+        if (weekday == FRIDAY_SCHEDULE) {
+            
+            // TWO DIFFERENT POSSIBILITIES FOR FRIDAY =======================================
+            if (UserDefaults.standard.value(forKey: "shortFri") as! Bool) {
+                endHour [0] = 9; endMin [0] = 49 // end of first period
+                endHour [1] = 10; endMin [1] = 25 // end of second period
+                endHour [2] = 10; endMin [2] = 25 // end of break period
+                endHour [3] = 11; endMin [3] = 1 // end of third period
+                endHour [4] = 11; endMin [4] = 37 // end of fourth period
+                endHour [5] = 12; endMin [5] = 3 // end of lunch period
+                endHour [6] = 12; endMin [6] = 39 // end of fifth period
+                endHour [7] = 13; endMin [7] = 15 // end of sixth period
+            } else {
+                endHour [0] = 9; endMin [0] = 58 // end of first period
+				endHour [1] = 10; endMin [1] = 44 // end of second period
+				endHour [2] = 10; endMin [2] = 44 // end of break period
+				endHour [3] = 11; endMin [3] = 30 // end of third period
+				endHour [4] = 12; endMin [4] = 16 // end of fourth period
+				endHour [5] = 12; endMin [5] = 44 // end of lunch period
+				endHour [6] = 13; endMin [6] = 30 // end of fifth period
+				endHour [7] = 14; endMin [7] = 15 // end of sixth period
+            }
+            //===============================================================================
+            tefillahHourEnd = 9
+            tefillahMinuteEnd = 12
+        } else {
+            endHour [0] = 10; endMin [0] = 1 // end of first period
+            endHour [1] = 10; endMin [1] = 57 // end of second period
+            endHour [2] = 11; endMin [2] = 53 // end of third period
+            endHour [3] = 12; endMin [3] = 27 // end of lunch period
+            endHour [4] = 13; endMin [4] = 23 // end of fourth period
+            endHour [5] = 14; endMin [5] = 19 // end of fifth period
+            endHour [6] = 14; endMin [6] = 34 // end of mincha period
+            endHour [7] = 15; endMin [7] = 27 // end of sixth period
+            
+            tefillahHourEnd = 9
+            tefillahMinuteEnd = 5
         }
     }
 }
