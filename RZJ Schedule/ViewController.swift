@@ -21,8 +21,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentDay: UIButton!
     @IBOutlet weak var settingsToolbar: UIView!
     
-    
-    let weekdays = ["", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     var classSchedules = [Schedule("A"), Schedule("B"), Schedule("C"), Schedule("BB"), Schedule("CC")]
     
     @IBOutlet weak var period: UILabel!
@@ -43,8 +41,6 @@ class ViewController: UIViewController {
         dayList = [a, b, c, bb, cc]
         dayListCenters = [a.center, b.center, c.center, bb.center, cc.center]
         
-        setDate()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name(rawValue: timerKey), object: nil)
         
         setTodaysSchedule()
@@ -64,13 +60,18 @@ class ViewController: UIViewController {
         // animate it!!!!!
         for d in 0..<dayList.count {
             
-            UIView.animate(withDuration: 0.5, animations: { 
-                if self.dayList[d].center == self.dayListCenters[d] {
+            if dayList[d].center == dayListCenters[d] {
+                UIView.animate(withDuration: 0.5, animations: { 
                     self.dayList[d].center = (sender as! UIButton).center
-                } else {
+                }, completion: { (void) in
+                    self.dayList[d].isHidden = true
+                })
+            } else {
+                self.dayList[d].isHidden = false
+                UIView.animate(withDuration: 0.5, animations: {
                     self.dayList[d].center = self.dayListCenters[d]
-                }
-            })
+                })
+            }
             
         }
     }
@@ -80,15 +81,26 @@ class ViewController: UIViewController {
             if !self.settingsToolbar.isHidden {
                 (sender as! UIButton).transform = .identity
             } else {
-               (sender as! UIButton).transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
+               (sender as! UIButton).transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
             }
         })
         settingsToolbar.isHidden = !settingsToolbar.isHidden
     }
     
+    @IBAction func onTappedShortFridaySwitch(_ sender: UISwitch) {
+        // MAKE SURE THIS WORKS!!!!!
+        UserDefaults.standard.set(sender.isOn, forKey: "shortFri")
+        myTimer.setTime()
+    }
+    
+    @IBAction func onTappedExtendTefillahSwitch(_ sender: UISwitch) {
+        // extend that tefillah!
+    }
+    
     private func setTodaysSchedule() {
         let tag = UserDefaults.standard.value(forKey: "DayTag") as! Int
         myTimer.mySchedule = classSchedules[tag]
+        dateLabel.text = myTimer.dateText
         
         dayList[tag].layer.borderWidth = selectedBorder
         currentDay.setTitle(String(myTimer.mySchedule.type), for: .normal)
@@ -96,22 +108,12 @@ class ViewController: UIViewController {
         // also check for weird schedules!
     }
     
-    private func setDate() {
-        let date = Date()
-        let calendar = Calendar.current
-        
-        let weekday = weekdays[calendar.component(.weekday, from: date)]
-        let month = String(calendar.component(.month, from: date))
-        let day = String(calendar.component(.day, from: date))
-        let year = String(calendar.component(.year, from: date))
-        dateLabel.text = weekday + "\n" + month + "." + day + "." + year
-    }
-    
     func update() {
         period.text = myTimer.currentPeriod
         upNext.text = myTimer.upNext
         timeLeftText.text = myTimer.currentTimer
         passingPeriodLabel.text = myTimer.myPassingPeriod.calculateTime()
+        dateLabel.text = myTimer.dateText
     }
     
     //=====================================================

@@ -12,6 +12,9 @@ let timerKey = "com.EcaKnowGames.timerNotificationKey"
 
 class MainTimer: NSObject {
     
+    let weekdays = ["", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    var dateText = ""
+    
     var hour=0, minute=0, second=0, weekday=0
     var endHour = [0,0,0,0,0,0,0,0], endMin = [0,0,0,0,0,0,0,0]
     
@@ -42,6 +45,11 @@ class MainTimer: NSObject {
         hour = calendar.component(.hour, from: date)
         minute = calendar.component(.minute, from: date)
         second = calendar.component(.second, from: date)
+        
+        let month = String(calendar.component(.month, from: date))
+        let day = String(calendar.component(.day, from: date))
+        let year = String(calendar.component(.year, from: date))
+        dateText = weekdays[weekday] + "\n" + month + "." + day + "." + year
     }
     
     @objc private func findCurrentPeriod() {

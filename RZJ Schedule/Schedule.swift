@@ -14,7 +14,7 @@ class Schedule: NSObject {
     var periods = ["No Class Input", "No Class Input", "No Class Input",
                    "No Class Input", "No Class Input", "No Class Input",
                    "No Class Input", "No Class Input"]
-    var periodTitles = ["Period 1", "Period 2", "Period 3","Lunch", "Period 4", "Period 5", "Period 6", "Period 7"]
+    var periodTitles = ["Period 1", "Period 2", "Period 3","Lunch", "Period 4", "Period 5", "Mincha", "Period 6"]
     
     convenience init(_ kind: String) {
         self.init()

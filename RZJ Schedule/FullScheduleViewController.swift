@@ -12,6 +12,7 @@ class FullScheduleViewController: UIViewController {
     
     @IBOutlet weak var largeDayLabel: UILabel!
     @IBOutlet weak var clockLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var schedule : Schedule!
     var timer : MainTimer!
@@ -29,6 +30,7 @@ class FullScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         schedule = timer.mySchedule
+        dateLabel.text = timer.dateText
         
         largeDayLabel.text = schedule.type
         allPeriodButtons = [one, two, three, four, five, six, seven, eight]
@@ -41,6 +43,7 @@ class FullScheduleViewController: UIViewController {
     
     func update() {
         clockLabel.text = timer.currentTimer
+        dateLabel.text = timer.dateText
         
         if timer.cpi >= 0 && timer.cpi <= allPeriodButtons.count {
             allPeriodButtons[timer.cpi].setTitleColor(.red, for: .normal)
